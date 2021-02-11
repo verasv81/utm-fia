@@ -22,8 +22,11 @@ def process_tree(node, spacing=""):
 
     if val == "yes":
         process_tree(node.true_branch, spacing)
-    else:
+    elif val == "no":
         process_tree(node.false_branch, spacing)
+    else:
+        print("Not a valid command. Try again")
+        process_tree(node)
 
 
 tree = build_tree(data)
